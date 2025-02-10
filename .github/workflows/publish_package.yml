@@ -58,6 +58,7 @@ jobs:
         run: |
           git config --global user.name "certaworksit"
           git config --global user.email "cwsithelpdesk@gmail.com"
+          git config set advice.addIgnoredFile false
           git add dist/ngx-trade-partner-form/**
           git commit -m "Automated build: Trade Partner Form"
           git push origin master
