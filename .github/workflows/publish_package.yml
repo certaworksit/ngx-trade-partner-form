@@ -63,4 +63,5 @@ jobs:
           git config set advice.addIgnoredFile false
           git add dist/ngx-trade-partner-form/**
           git commit -m "Automated build: Trade Partner Form"
+          git remote add https://github.com/certaworksit/npx-trade-partner.git
           git push origin master
