@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ngx-trade-partner-form'`, () => {
+  it(`should have as title 'app-trade-partner-form'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngx-trade-partner-form');
+    expect(app.title).toEqual('app-trade-partner-form');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ngx-trade-partner-form');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, app-trade-partner-form');
   });
 });

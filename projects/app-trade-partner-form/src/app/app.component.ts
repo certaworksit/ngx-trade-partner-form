@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'ngx-trade-partner-form';
+  title = 'app-trade-partner-form';
 }

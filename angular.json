@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-trade-partner-form": {
+    "app-trade-partner-form": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,35 +17,35 @@
           "standalone": false
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "projects/app-trade-partner-form",
+      "sourceRoot": "projects/app-trade-partner-form/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ngx-trade-partner-form",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
+            "outputPath": "dist/app-trade-partner-form",
+            "index": "projects/app-trade-partner-form/src/index.html",
+            "browser": "projects/app-trade-partner-form/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "tsconfig.app.json",
+            "tsConfig": "projects/app-trade-partner-form/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "projects/app-trade-partner-form/public"
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/app-trade-partner-form/src/styles.scss"
             ],
             "scripts": [],
-            "server": "src/main.server.ts",
+            "server": "projects/app-trade-partner-form/src/main.server.ts",
             "prerender": true,
             "ssr": {
-              "entry": "server.ts"
+              "entry": "projects/app-trade-partner-form/server.ts"
             }
           },
           "configurations": {
@@ -76,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ngx-trade-partner-form:build:production"
+              "buildTarget": "app-trade-partner-form:build:production"
             },
             "development": {
-              "buildTarget": "ngx-trade-partner-form:build:development"
+              "buildTarget": "app-trade-partner-form:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,21 +94,57 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "tsconfig.spec.json",
+            "tsConfig": "projects/app-trade-partner-form/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "projects/app-trade-partner-form/public"
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "projects/app-trade-partner-form/src/styles.scss"
             ],
             "scripts": []
           }
         }
       }
+    },
+    "ngx-trade-partner-form": {
+      "projectType": "library",
+      "root": "projects/ngx-trade-partner-form",
+      "sourceRoot": "projects/ngx-trade-partner-form/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-trade-partner-form/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-trade-partner-form/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-trade-partner-form/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ngx-trade-partner-form/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -11,6 +11,11 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
+    "paths": {
+      "ngx-trade-partner-form": [
+        "./dist/ngx-trade-partner-form"
+      ]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
