@@ -47,7 +47,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
             token: ${{ secrets.COMMIT_TOKEN }} # Use GitHub Actions token
       - name: Publish Trade Partner Form
