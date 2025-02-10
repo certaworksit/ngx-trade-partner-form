@@ -60,9 +60,15 @@ jobs:
         run: |
           git config --global user.name "certaworksit"
           git config --global user.email "cwsithelpdesk@gmail.com"
-          git config set advice.addIgnoredFile false
-          git add dist/ngx-trade-partner-form/**
+          cd dist/ngx-trade-partner-form
+
+          # Initialize a new Git repo
+          git init
+          git add .
           git commit -m "Automated build: Trade Partner Form"
+
           git branch -m master
-          git remote add origin https://github.com/certaworksit/npx-trade-partner.git
-          git push origin master
+          git remote add origin https://x-access-token:${{ secrets.COMMIT_TOKEN }}@github.com/certaworksit/npx-trade-partner.git
+
+          # Force push to ensure only dist files are in the target repo
+          git push --force origin master
