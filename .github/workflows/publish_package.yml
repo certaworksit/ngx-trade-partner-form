@@ -48,6 +48,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+            token: ${{ secrets.COMMIT_TOKEN }} # Use GitHub Actions token
       - name: Publish Trade Partner Form
         run: |
           npm i -g @angular/cli
