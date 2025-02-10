@@ -55,5 +55,9 @@ jobs:
       - name: Build Trade Partner Form
         run: ng build ngx-trade-partner-form
       - name: Publish Library
-        run: ll
-        shell: bash
+        run: |
+          git config --global user.name "certaworksit"
+          git config --global user.email "cwsithelpdesk@gmail.com"
+          git add dist/ngx-trade-partner-form/**
+          git commit -m "Automated build: Trade Partner Form"
+          git push origin master
